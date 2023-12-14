@@ -21,6 +21,7 @@
         "baseUrl": "./src",
         "paths": {
             "~assets/*": ["./assets/*"],
+            "~components/*": ["./components/*"],
             "~contexts/*": ["./contexts/*"],
             "~styles/*": ["./styles/*"],
             "~types/*": ["./types/*"],

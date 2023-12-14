@@ -1,7 +1,11 @@
+import { PageContent } from "~components/ui";
+import { GlobalStyles } from "~styles/global-styles";
+
 export function App() {
     return (
         <>
-            <h1>App</h1>
+            <GlobalStyles />
+            <PageContent />
         </>
     );
 }

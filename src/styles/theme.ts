@@ -1,7 +1,12 @@
 export const theme = {
     color: {
         brand: "#f68e5f",
-        main: "#070320"
+        main: "#070320",
+        primary: "#ffffff",
+        secondary: "#cecece",
+        variants: {
+            error: "#fc2a2a"
+        }
     },
     screen: {
         max_width: "90rem",
@@ -14,6 +19,13 @@ export const theme = {
             xl: "75rem",
             xxl: "90rem",
             mega: "120rem"
+        },
+        boxSize: {
+            full: "100%",
+            sm: "30rem",
+            md: "45rem",
+            lg: "55em",
+            xl: "75rem"
         }
     },
     spacing: {
@@ -33,5 +45,18 @@ export const theme = {
         subTitle: "normal 500 1.125rem / normal 'Montserrat', 'sans-serif'",
         sectionTitle: "normal 600 1.5rem / normal 'Montserrat', 'sans-serif'",
         mainTitle: "normal 700 2.25rem / normal 'Montserrat', 'sans-serif'"
+    },
+    border: {
+        size: {
+            primary: "0.125rem",
+            secondary: "0.5rem"
+        },
+        radius: {
+            circle: "100%",
+            primary: "4rem"
+        }
+    },
+    icon: {
+        primary: "2.25rem"
     }
 };
