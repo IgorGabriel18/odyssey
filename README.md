@@ -2,7 +2,7 @@
 
 ## Deploy
 
--   [Access Odyssey](URL)
+-   [Access Odyssey](https://odyssey-ig.vercel.app/)
 
 ## How to Use
 
