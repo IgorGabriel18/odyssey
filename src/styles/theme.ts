@@ -5,7 +5,8 @@ export const theme = {
         primary: "#ffffff",
         secondary: "#cecece",
         variants: {
-            error: "#fc2a2a"
+            error: "#fc2a2a",
+            glass: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))"
         }
     },
     screen: {
@@ -53,10 +54,12 @@ export const theme = {
         },
         radius: {
             circle: "100%",
-            primary: "4rem"
+            primary: "4rem",
+            secondary: "0.5rem"
         }
     },
     icon: {
-        primary: "2.25rem"
+        primary: "2.25rem",
+        secondary: "1.5rem"
     }
 };

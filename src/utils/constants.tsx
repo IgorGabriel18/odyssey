@@ -1,3 +1,8 @@
+import platformSupport1Icon from "~assets/icons/platform-support-1.svg";
+import platformSupport2Icon from "~assets/icons/platform-support-2.svg";
+import platformSupport3Icon from "~assets/icons/platform-support-3.svg";
+import platformSupport4Icon from "~assets/icons/platform-support-4.svg";
+import platformSupport5Icon from "~assets/icons/platform-support-5.svg";
 import game1Image from "~assets/images/game-1.jpg";
 import game2Image from "~assets/images/game-2.jpg";
 import game3Image from "~assets/images/game-3.jpg";
@@ -52,5 +57,47 @@ export const gameDistributorItems = [
         title: "Premium Support",
         description:
             "Rely on our dedicated team for premium support, from game tips to technical issue resolution, ensuring a smooth journey in the world of gaming."
+    }
+];
+
+export const platformSupportItems = [
+    {
+        icon: platformSupport1Icon,
+        title: "Mobile Game Development"
+    },
+    {
+        icon: platformSupport2Icon,
+        title: "PC Game Development"
+    },
+    {
+        icon: platformSupport3Icon,
+        title: "AR/VR Solutions"
+    },
+    {
+        icon: platformSupport4Icon,
+        title: "AR/ VR design"
+    },
+    {
+        icon: platformSupport5Icon,
+        title: "3D Modelings"
+    }
+];
+
+export const testimonialsItems = [
+    {
+        name: "Charles Boyle",
+        testimonial: "Amazing graphics, thrilling gameplay! Highly recommend to all gaming enthusiasts!",
+        profession: "Game Developer"
+    },
+    {
+        name: "Mary Smith",
+        testimonial:
+            "Phenomenal platform! Found my favorite games in one place, seamless experience. Never playing anywhere else again.",
+        profession: "Gamer and Streamer"
+    },
+    {
+        name: "John Doe",
+        testimonial: "Incredible service and a wide variety of games. I've never been disappointed!",
+        profession: "Tech Enthusiast"
     }
 ];

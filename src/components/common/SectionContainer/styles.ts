@@ -35,7 +35,7 @@ export const Container = styled.section<IContainerProps>`
 
         ${$container.bg &&
         css`
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${$container.bg.file});
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6)), url(${$container.bg.file});
             background-position: ${$container.bg.sizeFull
                 ? "center"
                 : $container.contentBoxPositionInLargeScreen === "start"
