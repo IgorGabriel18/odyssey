@@ -9,6 +9,33 @@ import game3Image from "~assets/images/game-3.jpg";
 import game4Image from "~assets/images/game-4.jpg";
 import game5Image from "~assets/images/game-5.jpg";
 
+export const pageContentItems = [
+    {
+        ref: "tendencies",
+        title: "Tendencies"
+    },
+    {
+        ref: "distributor",
+        title: "Distributor"
+    },
+    {
+        ref: "development",
+        title: "Development"
+    },
+    {
+        ref: "testimonials",
+        title: "Testimonials"
+    },
+    {
+        ref: "explore",
+        title: "Explore"
+    },
+    {
+        ref: "contact",
+        title: "Contact"
+    }
+];
+
 export const currentlyTrendingGamesItems = [
     {
         thumbnail: game1Image,

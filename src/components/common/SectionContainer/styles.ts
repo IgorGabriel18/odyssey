@@ -5,11 +5,11 @@ import { optionsBoxSizeType, optionsPositionType, optionsSpacingType } from "~ty
 export interface IContainerProps {
     $isTopOfPage?: true;
     $container: {
-        heightFull?: true;
+        heightFull: boolean;
         contentBoxPositionInLargeScreen: optionsPositionType;
         bg?: {
             file: string;
-            sizeFull?: true;
+            sizeFull: boolean;
         };
     };
 }
@@ -22,30 +22,30 @@ export interface IContentBoxProps {
 }
 
 export const Container = styled.section<IContainerProps>`
-    ${({ theme, $isTopOfPage, $container }) => css`
+    ${({ theme, ...rest }) => css`
         width: 100%;
         height: min-content;
-        min-height: ${$container.heightFull ? "100vh" : "min-content"};
-        padding: ${$isTopOfPage ? theme.spacing.ultra : theme.spacing.xxl} ${theme.spacing.md} ${theme.spacing.xxl};
+        min-height: ${rest.$container.heightFull ? "100vh" : "min-content"};
+        padding: ${rest.$isTopOfPage ? theme.spacing.ultra : theme.spacing.xxl} ${theme.spacing.md} ${theme.spacing.xxl};
         display: grid;
         grid: min-content / min(100%, ${theme.screen.max_width});
         justify-content: center;
-        justify-items: ${$container.contentBoxPositionInLargeScreen};
+        justify-items: ${rest.$container.contentBoxPositionInLargeScreen};
         align-content: center;
 
-        ${$container.bg &&
+        ${rest.$container.bg &&
         css`
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6)), url(${$container.bg.file});
-            background-position: ${$container.bg.sizeFull
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6)), url(${rest.$container.bg.file});
+            background-position: ${rest.$container.bg.sizeFull
                 ? "center"
-                : $container.contentBoxPositionInLargeScreen === "start"
+                : rest.$container.contentBoxPositionInLargeScreen === "start"
                   ? "right"
                   : "left"};
-            background-size: ${$container.bg.sizeFull ? "cover" : "45rem 25rem"};
+            background-size: ${rest.$container.bg.sizeFull ? "cover" : "45rem 25rem"};
             background-repeat: no-repeat;
 
             @media (width >= ${theme.screen.breakpoint.xxl}) {
-                background-position-x: ${$container.contentBoxPositionInLargeScreen === "start"
+                background-position-x: ${rest.$container.contentBoxPositionInLargeScreen === "start"
                     ? "calc(100% - 30%)"
                     : "30%"};
             }
@@ -54,12 +54,12 @@ export const Container = styled.section<IContainerProps>`
 `;
 
 export const ContentBox = styled.div<IContentBoxProps>`
-    ${({ theme, $contentBox }) => css`
-        width: min(100%, ${theme.screen.boxSize[$contentBox.size]});
+    ${({ theme, ...rest }) => css`
+        width: min(100%, ${theme.screen.boxSize[rest.$contentBox.size]});
         height: min-content;
         display: flex;
         flex-wrap: wrap;
-        gap: ${theme.spacing[$contentBox.gapItems]};
-        justify-content: ${$contentBox.itemsPosition};
+        gap: ${theme.spacing[rest.$contentBox.gapItems]};
+        justify-content: ${rest.$contentBox.itemsPosition};
     `}
 `;

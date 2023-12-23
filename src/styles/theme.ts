@@ -1,3 +1,5 @@
+import { keyframes } from "styled-components";
+
 export const theme = {
     color: {
         brand: "#f68e5f",
@@ -47,6 +49,12 @@ export const theme = {
         sectionTitle: "normal 600 1.5rem / normal 'Montserrat', 'sans-serif'",
         mainTitle: "normal 700 2.25rem / normal 'Montserrat', 'sans-serif'"
     },
+    blur: "0.25rem",
+    icon: {
+        primary: "3rem",
+        secondary: "1.25rem",
+        tertiary: "2.25rem"
+    },
     border: {
         size: {
             primary: "0.125rem",
@@ -58,8 +66,55 @@ export const theme = {
             secondary: "0.5rem"
         }
     },
-    icon: {
-        primary: "2.25rem",
-        secondary: "1.5rem"
+    time: {
+        primary: "0.75s",
+        secondary: "0.75s",
+        tertiary: "0.5s"
+    },
+    animation: {
+        simpleRender: keyframes`
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        `,
+        swingEffect: keyframes`
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(5deg);
+            }
+            50% {
+                transform: rotate(-5deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        `,
+        navbar: {
+            entrance: keyframes`
+                from {
+                    transform: translateX(100%) skewX(20deg);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0) skewX(0deg);
+                    opacity: 1;
+                }
+            `,
+            exit: keyframes`
+                from {
+                    transform: translateX(0) skewX(0deg);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%) skewX(20deg);
+                    opacity: 0;
+                }
+            `
+        }
     }
 };

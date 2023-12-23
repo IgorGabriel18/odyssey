@@ -6,7 +6,7 @@ export const Container = styled.main`
         height: min-content;
         display: flex;
         flex-direction: column;
-        row-gap: ${theme.spacing.super};
+        row-gap: ${theme.spacing.mega};
     `}
 `;
 
@@ -45,29 +45,11 @@ export const TestimonialLegend = styled.legend`
     `}
 `;
 
-export const TestimonialButton = styled.button`
-    ${({ theme }) => css`
-        width: max-content;
-        height: min-content;
-        padding: ${theme.spacing.xs} ${theme.spacing.lg};
-        border: ${theme.border.size.primary} solid ${theme.color.brand};
-        border-radius: ${theme.border.radius.primary};
-        background: ${theme.color.variants.glass};
-        cursor: pointer;
-
-        .testimonial-button__icon {
-            display: block;
-            font-size: ${theme.icon.secondary};
-            color: ${theme.color.primary};
-        }
-    `}
-`;
-
 export const Form = styled.form`
     ${({ theme }) => css`
         width: 100%;
         height: min-content;
-        padding: ${theme.spacing.lg} ${theme.spacing.xxl};
+        padding: ${theme.spacing.lg} ${theme.spacing.sm};
         border-radius: ${theme.border.radius.secondary};
         display: grid;
         grid: repeat(3, min-content) / 100%;
@@ -77,6 +59,7 @@ export const Form = styled.form`
 
         @media (width >= ${theme.screen.breakpoint.md}) {
             width: 85%;
+            padding-inline: ${theme.spacing.xxl};
             grid: repeat(2, min-content) / repeat(2, 1fr);
             grid-template-areas:
                 "item1 item3 item3"
@@ -129,21 +112,5 @@ export const FormInput = styled.input`
         background-color: transparent;
         color: ${theme.color.primary};
         font: ${theme.typography.bodyText};
-    `}
-`;
-
-export const FormButton = styled.button`
-    ${({ theme }) => css`
-        width: max-content;
-        height: min-content;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-
-        .form-button__icon {
-            display: block;
-            font-size: ${theme.icon.secondary};
-            color: ${theme.color.primary};
-        }
     `}
 `;

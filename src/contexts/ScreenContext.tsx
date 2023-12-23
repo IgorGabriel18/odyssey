@@ -23,7 +23,10 @@ export function ScreenContextProvider({ children }: IChildren) {
         () => setScrollButtonVisibility(window.scrollY >= SCROLL_VISIBILITY_THRESHOLD),
         []
     );
-    const handleClickScrollToTop = useCallback(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
+    const handleClickScrollToTop = useCallback(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.history.pushState(null, "", "/");
+    }, []);
 
     useEffect(() => {
         window.addEventListener("resize", handleScreenWidth);

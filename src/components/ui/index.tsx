@@ -1,3 +1,6 @@
+import { Footer } from "./Footer";
+import { Navbar } from "./Navbar";
 import { PageContent } from "./PageContent";
+import { ScrollToTopButton } from "./ScrollToTopButton";
 
-export { PageContent };
+export { Navbar, PageContent, Footer, ScrollToTopButton };

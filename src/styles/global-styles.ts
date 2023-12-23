@@ -8,18 +8,23 @@ export const GlobalStyles = createGlobalStyle`
             box-sizing: border-box;
         }
 
-        #root {
-            width: 100%;
-            height: auto;
-            min-height: 100vh;
-            background-color: ${theme.color.main};
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: ${theme.spacing.super};
 
-            a {
-                text-decoration: none;
-            }
+            #root {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+                background-color: ${theme.color.main};
 
-            li {
-                list-style: none;
+                a {
+                    text-decoration: none;
+                }
+
+                li {
+                    list-style: none;
+                }
             }
         }
     `}
