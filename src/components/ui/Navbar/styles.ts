@@ -1,17 +1,17 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
     ${({ theme }) => css`
         width: 100%;
         height: min-content;
-        padding: ${theme.spacing.lg} ${theme.spacing.md} ${theme.spacing.md};
+        padding: ${theme.spacing.lg} ${theme.spacing.md};
         position: fixed;
-        inset: 0 auto 0 auto;
+        inset: 0 0 auto 0;
         z-index: 10;
         display: grid;
         grid: min-content / min(100%, ${theme.screen.max_width});
         justify-content: center;
-        background: ${theme.color.variants.glass};
+        background-color: ${theme.color.variants.glass};
         backdrop-filter: blur(${theme.blur});
     `}
 `;

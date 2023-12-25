@@ -6,7 +6,18 @@ export const Container = styled.main`
         height: min-content;
         display: flex;
         flex-direction: column;
-        row-gap: ${theme.spacing.mega};
+        row-gap: ${theme.spacing.xxl};
+
+        .game-distributor-items__icon {
+            width: max-content;
+            height: min-content;
+            padding: ${theme.spacing.sm};
+            border: ${theme.border.size.primary} solid ${theme.color.brand};
+            border-radius: ${theme.border.radius.circle};
+            background: ${theme.color.variants.glass};
+            color: ${theme.color.brand};
+            font-size: ${theme.icon.secondary};
+        }
     `}
 `;
 
@@ -42,6 +53,24 @@ export const TestimonialLegend = styled.legend`
         color: ${theme.color.primary};
         font: ${theme.typography.bodyText};
         text-align: center;
+    `}
+`;
+
+export const TestimonialButton = styled.button`
+    ${({ theme }) => css`
+        width: max-content;
+        height: min-content;
+        padding: ${theme.spacing.xs} ${theme.spacing.md};
+        border: ${theme.border.size.primary} solid ${theme.color.brand};
+        border-radius: ${theme.border.radius.primary};
+        background: ${theme.color.variants.glass};
+        cursor: pointer;
+
+        .testimonial-button__icon {
+            display: block;
+            color: ${theme.color.brand};
+            font-size: ${theme.icon.tertiary};
+        }
     `}
 `;
 
@@ -112,5 +141,21 @@ export const FormInput = styled.input`
         background-color: transparent;
         color: ${theme.color.primary};
         font: ${theme.typography.bodyText};
+    `}
+`;
+
+export const FormButton = styled.button`
+    ${({ theme }) => css`
+        width: max-content;
+        height: min-content;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        .form-button__icon {
+            display: block;
+            color: ${theme.color.primary};
+            font-size: ${theme.icon.tertiary};
+        }
     `}
 `;

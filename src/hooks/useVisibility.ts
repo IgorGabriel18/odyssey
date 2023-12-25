@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 
 interface IUseVisibility {
-    timeoutDuration?: number;
-    activateEffect?: boolean;
-    newVisibility?: boolean;
+    condition?: boolean;
+    newVisibilityToLargeScreen?: boolean;
+    delay?: number;
 }
 
-export const useVisibility = ({ timeoutDuration, activateEffect, newVisibility }: IUseVisibility = {}) => {
-    const [visibility, setVisibility] = useState(false);
-    const [loading, setLoading] = useState(false);
+export const useVisibility = ({ condition, newVisibilityToLargeScreen, delay }: IUseVisibility = {}) => {
+    const [visibility, setVisibility] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleClickToggleVisibility = () => {
         if (visibility) {
-            setLoading(true);
+            setIsLoading(true);
             setTimeout(() => {
-                setLoading(false);
+                setIsLoading(false);
                 setVisibility(false);
-            }, timeoutDuration || 0);
+            }, delay || 0);
         } else {
-            setVisibility(true);
+            setVisibility(!visibility);
         }
     };
 
-    useEffect(() => {
-        setVisibility(newVisibility!);
-    }, [activateEffect]);
+    useLayoutEffect(() => {
+        setVisibility(newVisibilityToLargeScreen!);
+    }, [condition]);
 
-    return { visibility, loading, handleClickToggleVisibility };
+    return { isLoading, visibility, handleClickToggleVisibility };
 };

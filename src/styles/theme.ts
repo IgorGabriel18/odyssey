@@ -50,11 +50,6 @@ export const theme = {
         mainTitle: "normal 700 2.25rem / normal 'Montserrat', 'sans-serif'"
     },
     blur: "0.25rem",
-    icon: {
-        primary: "3rem",
-        secondary: "1.25rem",
-        tertiary: "2.25rem"
-    },
     border: {
         size: {
             primary: "0.125rem",
@@ -66,10 +61,15 @@ export const theme = {
             secondary: "0.5rem"
         }
     },
+    icon: {
+        primary: "3rem",
+        secondary: "2.25rem",
+        tertiary: "1.25rem"
+    },
     time: {
         primary: "0.75s",
-        secondary: "0.75s",
-        tertiary: "0.5s"
+        secondary: "0.5s",
+        tertiary: "0.25s"
     },
     animation: {
         simpleRender: keyframes`

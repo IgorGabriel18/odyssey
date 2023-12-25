@@ -13,6 +13,7 @@ export function Footer() {
                 alt="Logo icon"
             />
             <Navigation
+                render={true}
                 $breakpoint="sm"
                 $color="primary"
                 $typography="legend"

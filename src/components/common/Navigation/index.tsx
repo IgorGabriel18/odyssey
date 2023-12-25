@@ -1,37 +1,39 @@
-import { Link } from "~components/common";
-import { IFont } from "~types/global-types";
+import { IFont, IRender } from "~types/global-types";
 import { pageContentItems } from "~utils/constants";
+import { renderIf } from "~utils/render";
 
 import * as S from "./styles";
 
-interface INavigationProps {
+interface INavigationProps extends S.IContainerProps, IFont, IRender {
     click?: () => void;
 }
 
 export function Navigation({
+    render,
+    click,
     $breakpoint,
     $navbarAnimation,
     $color,
     $typography,
-    $align,
-    click
-}: S.IContainerProps & IFont & INavigationProps) {
-    return (
+    $align
+}: INavigationProps) {
+    return renderIf(
+        render,
         <S.Container
             $breakpoint={$breakpoint}
             $navbarAnimation={$navbarAnimation}
         >
             {pageContentItems.map(({ ref, title }) => (
-                <Link
+                <S.Link
                     key={ref}
                     href={`#${ref}`}
+                    onClick={click}
                     $color={$color}
                     $typography={$typography}
                     $align={$align}
-                    onClick={click}
                 >
                     {title}
-                </Link>
+                </S.Link>
             ))}
         </S.Container>
     );

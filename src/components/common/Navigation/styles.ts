@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { optionsBreakpointType } from "~types/global-types";
+import { IFont, optionsBreakpointType } from "~types/global-types";
 
 export interface IContainerProps {
     $breakpoint: optionsBreakpointType;
@@ -31,6 +31,22 @@ export const Container = styled.nav<IContainerProps>`
         @media (width >= ${theme.screen.breakpoint[rest.$breakpoint]}) {
             width: max-content;
             flex-direction: row;
+        }
+    `}
+`;
+
+export const Link = styled.a<IFont>`
+    ${({ theme, ...style }) => css`
+        width: 100%;
+        height: min-content;
+        color: ${style.$color ? theme.color[style.$color] : theme.color.variants[style.$colorVariant!]};
+        font: ${theme.typography[style.$typography]};
+        text-align: ${style.$align};
+        transition: all ${theme.time.tertiary} ease-in-out;
+
+        &:hover {
+            color: ${theme.color.brand};
+            animation: ${theme.animation.swingEffect} ${theme.time.tertiary} ease-in-out;
         }
     `}
 `;

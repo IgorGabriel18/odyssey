@@ -11,13 +11,12 @@ export const useNavbar = () => {
     const theme = useTheme();
     const { screenWidth, breakpoint } = useContext(ScreenContext);
     const renderButton = screenWidth < breakpoint().md;
-    const { loading, visibility, handleClickToggleVisibility } = useVisibility({
-        activateEffect: renderButton,
-        newVisibility: false,
-        timeoutDuration: parseFloat(theme.time.primary) * MILLISECONDS
+    const { isLoading, visibility, handleClickToggleVisibility } = useVisibility({
+        condition: renderButton,
+        newVisibilityToLargeScreen: false,
+        delay: parseFloat(theme.time.tertiary) * MILLISECONDS
     });
-    const handleClick = screenWidth >= breakpoint().md ? undefined : handleClickToggleVisibility;
     const renderNavigation = screenWidth >= breakpoint().md || visibility;
 
-    return { loading, visibility, handleClick, renderButton, renderNavigation };
+    return { isLoading, visibility, handleClickToggleVisibility, renderButton, renderNavigation };
 };

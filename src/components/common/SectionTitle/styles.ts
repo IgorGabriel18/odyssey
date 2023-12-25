@@ -3,25 +3,32 @@ import styled, { css } from "styled-components";
 import { IFont } from "~types/global-types";
 
 export const Container = styled.h2<IFont>`
-    ${({ theme, ...rest }) => css`
+    ${({ theme, ...style }) => css`
         width: 100%;
         height: min-content;
-        color: ${rest.$color ? theme.color[rest.$color] : theme.color.variants[rest.$colorVariant!]};
-        font: ${theme.typography[rest.$typography]};
-        text-align: ${rest.$align};
+        color: ${style.$color ? theme.color[style.$color] : theme.color.variants[style.$colorVariant!]};
+        font: ${theme.typography[style.$typography]};
+        text-align: ${style.$align};
 
-        ${rest.$lines &&
+        ${style.$lines &&
         css`
             display: flex;
-            column-gap: ${theme.spacing.md};
-            justify-content: ${rest.$lines === "right" ? "start" : "center"};
+            flex-direction: column;
+            gap: ${theme.spacing.md};
+            justify-content: ${style.$lines === "right" ? "start" : "center"};
             align-items: center;
 
-            ${rest.$lines === "right" ? "&::after" : "&::before, &::after"} {
+            ${style.$lines === "right" ? "&::after" : "&::before, &::after"} {
                 content: "";
                 width: 4rem;
                 height: ${theme.border.size.primary};
-                background-color: ${rest.$color ? theme.color[rest.$color] : theme.color.variants[rest.$colorVariant!]};
+                background-color: ${style.$color
+                    ? theme.color[style.$color]
+                    : theme.color.variants[style.$colorVariant!]};
+            }
+
+            @media (width >= ${theme.screen.breakpoint.sm}) {
+                flex-direction: row;
             }
         `}
     `}

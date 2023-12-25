@@ -13,17 +13,21 @@ export const Container = styled.button`
         background: ${theme.color.variants.glass};
         backdrop-filter: blur(${theme.blur});
         cursor: pointer;
-        animation: ${theme.animation.simpleRender} ${theme.time.primary} ease-in-out;
         transition: transform ${theme.time.tertiary} ease-in-out;
+        animation: ${theme.animation.simpleRender} ${theme.time.primary} ease-in-out;
 
         .container__icon {
             display: block;
             color: ${theme.color.brand};
-            font-size: ${theme.icon.secondary};
+            font-size: ${theme.icon.tertiary};
         }
 
         &:hover {
             transform: scale(1.15);
+        }
+
+        @media (width >= ${theme.screen.breakpoint.xxl}) {
+            right: 15%;
         }
     `}
 `;

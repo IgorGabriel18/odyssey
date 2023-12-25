@@ -8,36 +8,34 @@ import { renderIf } from "~utils/render";
 import * as S from "./styles";
 
 export function Navbar() {
-    const { loading, visibility, handleClick, renderButton, renderNavigation } = useNavbar();
+    const { visibility, renderButton, handleClickToggleVisibility, renderNavigation, isLoading } = useNavbar();
 
     return (
         <S.Container>
             <S.SubContainer>
                 <Image
-                    $size="primary"
                     src={logoIcon}
-                    alt="Logo icon"
+                    alt="Logo Icon"
+                    $size="primary"
                 />
                 {renderIf(
                     renderButton,
                     <S.MenuButton
                         type="button"
-                        onClick={handleClick}
+                        onClick={handleClickToggleVisibility}
                     >
                         {!visibility ? <List className="menu-button__icon" /> : <X className="menu-button__icon" />}
                     </S.MenuButton>
                 )}
-                {renderIf(
-                    renderNavigation,
-                    <Navigation
-                        $breakpoint="md"
-                        $navbarAnimation={{ loading: loading }}
-                        $color="primary"
-                        $typography="subTitle"
-                        $align="center"
-                        click={handleClick}
-                    />
-                )}
+                <Navigation
+                    render={renderNavigation}
+                    $breakpoint="md"
+                    $navbarAnimation={{ loading: isLoading }}
+                    click={handleClickToggleVisibility}
+                    $color="primary"
+                    $typography="subTitle"
+                    $align="center"
+                />
             </S.SubContainer>
         </S.Container>
     );

@@ -5,12 +5,12 @@ import { IChildren } from "~types/global-types";
 import * as S from "./styles";
 
 export function SectionContainer({
-    children,
     $isTopOfPage,
     $container,
     $contentBox,
+    children,
     ...restHTMLProps
-}: IChildren & S.IContainerProps & S.IContentBoxProps & HTMLProps<HTMLDivElement>) {
+}: S.IContainerProps & S.IContentBoxProps & IChildren & HTMLProps<HTMLDivElement>) {
     return (
         <S.Container
             $isTopOfPage={$isTopOfPage}
