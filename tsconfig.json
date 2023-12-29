@@ -12,6 +12,7 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
+        "esModuleInterop": true,
         /* Linting */
         "strict": true,
         "noUnusedLocals": true,
@@ -20,6 +21,7 @@
         // Absolute imports
         "baseUrl": "./src",
         "paths": {
+            "~tests/*": ["./__tests__/*"],
             "~assets/*": ["./assets/*"],
             "~components/*": ["./components/*"],
             "~contexts/*": ["./contexts/*"],
@@ -27,7 +29,9 @@
             "~styles/*": ["./styles/*"],
             "~types/*": ["./types/*"],
             "~utils/*": ["./utils/*"]
-        }
+        },
+        // Test
+        "types": ["@testing-library/jest-dom", "jest-styled-components"]
     },
     "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }]
